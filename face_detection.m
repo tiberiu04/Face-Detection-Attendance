@@ -168,11 +168,11 @@ function send_absent_emails(parent_emails, statuses, names)
 end
 
 function send_email(recipient, subject, message)
-    % Configure email preferences
+    % Configure email preferences for you
     setpref('Internet','SMTP_Server','smtp.gmail.com');
-    setpref('Internet','E_mail','your_email@gmail.com'); % Replace with your email
-    setpref('Internet','SMTP_Username','your_email@gmail.com'); % Replace with your email
-    setpref('Internet','SMTP_Password','your_password'); % Replace with your password
+    setpref('Internet','E_mail','your_email@gmail.com');
+    setpref('Internet','SMTP_Username','your_email@gmail.com');
+    setpref('Internet','SMTP_Password','your_password');
 
     % Configure SMTP properties
     props = java.lang.System.getProperties;
@@ -207,8 +207,6 @@ function save_attendance_to_csv(names, statuses, parent_emails, filename)
     writetable(T, filename);
     disp(['Attendance saved to ', filename]);
 end
-
-% Main execution block
 
 % Define the database path
 database_path = 'D:\MATLAB';
